@@ -14,7 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running unit tests...'
-                sh 'python3 -m unittest discover -s .'
+                sh '.venv/bin/python -m unittest discover -s .'
             }
         }
 
@@ -41,7 +41,7 @@ pipeline {
         stage('Test Application') {
             steps {
                 echo 'Testing the application...'
-                sh 'python3 -m unittest test_app.py'
+                sh '.venv/bin/python -m unittest test_app.py'
             }
         }
     }
