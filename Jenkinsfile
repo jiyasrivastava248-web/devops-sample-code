@@ -6,7 +6,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Installing Python dependencies...'
-                sh 'python3 -m pip install -r requirements.txt'
+                sh 'python3 -m venv .venv'
+                sh '.venv/bin/python -m pip install "Werkzeug<3" -r requirements.txt'
             }
         }
 
